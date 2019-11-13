@@ -5,6 +5,7 @@
 // This program determines if user input is an Armstrong Number
 
 #include <iostream>
+using  namespace std;
 
 int main() {
     // This function determines if user input is an Armstrong Number
@@ -14,7 +15,7 @@ int main() {
     int numberAsInt;
     int lengthOfNumber;
     int len;
-    int potentialArmstrongNumber;
+    int potentialArmstrongNumber = 0;
     std::string singleDigitAsString;
     int addingNum;
 
@@ -24,29 +25,26 @@ int main() {
     std::cin >> numberAsString;
     std::cout << "" << std::endl;
 
+    // need to know length of digit
+    lengthOfNumber = numberAsString.length();
+
     // Process & Output
     try {
         numberAsInt = std::stoi(numberAsString);
-
-        // need to know length of digit
-        lengthOfNumber = len(numberAsString);
-        potentialArmstrongNumber = 0;
-
-        for (singleDigitAsString in numberAsString) {
+        for (string singleDigitAsString : numberAsString) {
             singleDigitAsString = std::stoi(singleDigitAsString);
-            addingNum = singleDigitAsString**lengthOfNumberr;
-            potentialArmstrongNumber = potentialArmstrongNumberrmstrong_number
-            + addingNum;
+            addingNum = singleDigitAsString ** lengthOfNumber;
+            potentialArmstrongNumber = potentialArmstrongNumber + addingNum;
 
             // display the result
-            if (numberAsInts_int == potentialArmstrongNumber) {
-            std::cout << numberAsInt << "is an Armstrong number." << std::endl;
-            } else: {
-            std::cout << numberAsInt << "is not an Armstrong number."
-            << std::endl;
+            if (numberAsInt == potentialArmstrongNumber) {
+                std::cout << numberAsInt << "is an Armstrong number." 
+                          << std::endl;
+            } else {
+                std::cout << numberAsInt << "is not an Armstrong number."
+                          << std::endl;
             }
-    } )catch (std::invalid_argument) {
-            std::cout << "That is not an integer." << std::endl;
         }
-    }
+    } catch (std::invalid_argument) {
+            std::cout << "That is not an integer." << std::endl; }
 }
